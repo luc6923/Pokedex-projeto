@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./img/favicon-16x16.png" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Pokédex</title>
+
+    <style>
+      /* Botão Ativar Música da Batalha */
+      #play-audio-btn {
+        background-color: red; /* fundo vermelho */
+        color: white; /* texto branco */
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        margin: 10px 5px;
+      }
+
+      #play-audio-btn:hover {
+        background-color: darkred; /* vermelho mais escuro no hover */
+      }
+    </style>
+
+    <script defer src="./script.js"></script>
+    <script defer src="./audio-popup.js"></script>
+  </head>
+  <body>
+    <main>
+      <!-- Container da Pokédex -->
+      <div class="pokedex-container">
+        <img src="#" alt="pokemon" class="pokemon__image" />
+
+        <h1 class="pokemon__data">
+          <span class="pokemon__number"></span> —
+          <span class="pokemon__name"></span>
+        </h1>
+
+        <img src="./img/poke.png" alt="pokedex" class="pokedex" />
+      </div>
+
+      <!-- Formulário -->
+      <form class="form">
+        <input
+          type="search"
+          class="input__search"
+          placeholder="name or number"
+        />
+      </form>
+
+      <!-- Botões de navegação -->
+      <div class="buttons">
+        <button class="button btn-prev">Prev &lt;</button>
+        <button class="button btn-next">Next &gt;</button>
+      </div>
+
+      <!-- Controles de áudio -->
+      <div class="audio-controls">
+        <button id="play-audio-btn">Ativar Música da Batalha</button>
+        <button id="pause-audio-btn" style="display: none">Parar Música</button>
+      </div>
+
+      <!-- Áudio (começa parado) -->
+      <audio id="pokemon-audio" loop>
+        <source src="./wild-battle/wild-pokemon-battle.mp3" type="audio/mpeg" />
+        Seu navegador não suporta áudio HTML5.
+      </audio>
+    </main>
+  </body>
+</html>

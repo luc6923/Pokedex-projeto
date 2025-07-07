@@ -1,0 +1,135 @@
+/* Importa a fonte Oxanium do Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700;800&display=swap");
+
+/* Reset geral de estilos e definição de fonte padrão */
+* {
+  margin: 0; /* Remove margem padrão de todos os elementos */
+  padding: 0; /* Remove o espaçamento interno padrão */
+  box-sizing: border-box; /* Inclui borda e padding dentro das medidas dos elementos */
+  font-family: "Oxanium", cursive; /* Aplica a fonte Oxanium em todo o site */
+}
+
+/* Estilo geral do corpo da página */
+body {
+  text-align: center; /* Centraliza o conteúdo dentro do body */
+  background: linear-gradient(
+    to bottom,
+    #d68f0a,
+    #fff
+  ); /* Fundo com gradiente de laranja para branco */
+  min-height: 100vh; /* Garante que o body ocupe pelo menos 100% da altura da tela */
+}
+
+/* Área principal onde fica a pokédex */
+main {
+  display: inline-block; /* Faz o main se comportar como um bloco, mas permitindo ficar ao lado de outros elementos se necessário */
+  margin-top: 2%; /* Espaço no topo da página */
+  padding: 15px; /* Espaçamento interno */
+  position: relative; /* Torna o main um elemento de referência para posicionamento absoluto dos filhos */
+}
+
+/* Imagem da pokédex */
+.pokedex {
+  width: 100%; /* Faz a imagem ocupar toda a largura disponível */
+  max-width: 425px; /* Limita a largura máxima da pokédex */
+}
+
+/* Imagem do Pokémon */
+.pokemon__image {
+  position: absolute; /* Posicionamento absoluto dentro do main */
+  bottom: 55%; /* Define a distância da base do main */
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translate(-63%, 20%); /* Ajuste fino para a posição da imagem */
+  height: 18%; /* Tamanho da imagem proporcional ao container */
+}
+
+/* Texto com número e nome do Pokémon */
+.pokemon__data {
+  position: absolute; /* Posicionamento absoluto */
+  font-weight: 600; /* Texto mais grosso (semibold) */
+  color: #aaa; /* Cor cinza claro */
+
+  /* ---- AJUSTES DE POSICIONAMENTO AQUI ---- */
+  top: 52%; /* Vertical, sobe ou desce */
+  left: 50%; /* Horizontal, centraliza */
+  transform: translateX(-50%); /* Corrige o centro */
+  font-size: clamp(8px, 5vw, 25px);
+  text-align: center;
+}
+
+/* Nome do Pokémon (cor e formatação de texto) */
+.pokemon__name {
+  color: #3a444d; /* Cor cinza escuro */
+  text-transform: capitalize; /* Primeira letra de cada palavra em maiúscula */
+}
+
+/* Formulário de busca (input) */
+.form {
+  position: absolute; /* Posicionamento absoluto */
+  width: 69%; /* Largura do formulário */
+  top: 63%; /* Distância do topo */
+  left: 13.5%; /* Distância da esquerda */
+}
+
+/* Campo de pesquisa (input) */
+.input__search {
+  width: 100%; /* Ocupa 100% da largura do formulário */
+  padding: 4%; /* Espaçamento interno */
+  outline: none; /* Remove a borda azul quando o campo está focado */
+  border: 2px solid #333; /* Borda cinza escuro */
+  border-radius: 5px; /* Cantos arredondados */
+  font-weight: 600; /* Texto em semibold */
+  color: #3a444d; /* Cor do texto */
+  font-size: clamp(8px, 5vw, 1rem); /* Tamanho de fonte adaptável */
+  box-shadow: -3px 4px 0 #888, -5px 7px 0 #333; /* Sombra dupla para efeito de relevo */
+}
+
+/* Container dos botões de navegação (Prev e Next) */
+.buttons {
+  position: absolute; /* Posicionamento absoluto dentro do main */
+  bottom: 19%; /* Distância da base do main */
+  left: 50%; /* Centralizado horizontalmente */
+  width: 67%; /* Largura total do container */
+  transform: translate(-57%, 0); /* Ajuste fino para centralizar melhor */
+  display: flex; /* Deixa os botões lado a lado */
+  gap: 20px; /* Espaço entre os botões */
+}
+
+/* Estilo geral dos botões Prev e Next */
+.button {
+  width: 50%; /* Cada botão ocupa metade da largura do container */
+  padding: 5%; /* Espaçamento interno */
+  border: 2px solid #000; /* Borda preta */
+  border-radius: 5px; /* Cantos arredondados */
+  font-size: clamp(8px, 5vw, 1rem); /* Fonte responsiva */
+  font-weight: 600; /* Texto em semibold */
+  color: white; /* Texto branco */
+  background-color: #444; /* Fundo cinza escuro */
+  box-shadow: -2px 3px 0 #222, -4px 6px 0 #000; /* Sombra dupla para dar profundidade */
+}
+
+/* Efeito de clique nos botões */
+.button:active {
+  box-shadow: inset -4px 4px 0 #222; /* Efeito de pressão (sombra interna) */
+  font-size: 0.9rem; /* Diminui um pouco o tamanho da fonte ao clicar */
+}
+
+#audio-toggle {
+  position: absolute; /* Tira o botão do fluxo normal */
+  top: 10px; /* Distância do topo */
+  right: 10px; /* Distância da direita */
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  z-index: 1000; /* Garante que fique acima de outros elementos */
+}
+
+/* Efeito hover no botão de áudio */
+#audio-toggle:hover {
+  background-color: darkred; /* Vermelho mais escuro quando passa o mouse */
+}
